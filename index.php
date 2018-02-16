@@ -277,6 +277,14 @@ $(document).ready(function () {
       document.getElementById('etcLastBtc').innerHTML = convertToRupiah(Math.round(data.ticker.last*btcPrice));
     });
 
+    $.getJSON('https://vip.bitcoin.co.id/api/ignis_idr/ticker', function(data) {
+      document.getElementById('ignisLastIdr').innerHTML = convertToRupiah(data.ticker.last);
+      document.getElementById('totalVIPignis').innerHTML = Math.floor(data.ticker.vol_ignis)
+    });
+    $.getJSON('https://vip.bitcoin.co.id/api/ignis_btc/ticker', function(data) {
+      document.getElementById('ignisLastBtc').innerHTML = convertToRupiah(Math.round(data.ticker.last*btcPrice));
+    });
+
   }
 
 
